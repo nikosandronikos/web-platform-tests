@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="300" height="300">
+    <link rel="help" href="https://www.w3.org/TR/2016/CR-SVG2-20160915/painting.html#OrientAttribute"/>
+    <meta name="assert" content=""/>
+    <link rel="match" href="marker-orient-001-ref.svg"/>
+    <defs>
+        <marker id="arrow" orient="auto-start-reverse" markerWidth="10" markerHeight="10" style="overflow:visible">
+            <path d="M5,0 L 0,-5 L0,5 z" fill="green"/>
+        </marker>
+     </defs>
+    <text font-size="3">
+    <tspan x="0" y="3">Markers at each end of the path should point outwards.</tspan>
+    <tspan x="0" y="6">Middle marker should point along the direction of the path.</tspan>
+    <tspan x="0" y="9">No red should be visible.</tspan>
+    </text>
+    <!-- Must not be visible -->
+    <path d="M 19.5,19.5 l-2.5,2.5 l0,-5 l5,0 z" fill="red" />
+    <path d="M 80.5,80.5 l-2.5,2.5 l5,0 l0,-5 z" fill="red" />
+    <!-- Test path, with markers -->
+    <path d="M 20,20 l30,30 30,30" marker-start="url(#arrow)" marker-mid="url(#arrow)" marker-end="url(#arrow)" stroke="black"/>
+</svg>
